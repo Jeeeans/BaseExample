@@ -1,0 +1,3 @@
+[submodule "BaseKit"]
+	path = BaseKit
+	url = ssh://git@github.com/Jeeeans/BaseKit/
