@@ -21,6 +21,12 @@
 		7E09260126B26D5200C71631 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E0925FF26B26D5200C71631 /* HomeViewController.xib */; };
 		7E09260926B2759900C71631 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E09260826B2759900C71631 /* MainNavigationController.swift */; };
 		7EB7BD6726B28FBD005433F2 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7BD6626B28FBD005433F2 /* HomeCoordinator.swift */; };
+		7EB7BD6A26B2979C005433F2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7BD6926B2979C005433F2 /* HomeViewModel.swift */; };
+		7EB7BD6C26B369BF005433F2 /* HomeAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB7BD6B26B369BF005433F2 /* HomeAdapter.swift */; };
+		7EFF7A2726B3D2D000360C6C /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF7A2626B3D2D000360C6C /* HomeService.swift */; };
+		7EFF7A2C26B3D3A600360C6C /* FacadeApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF7A2B26B3D3A600360C6C /* FacadeApiClient.swift */; };
+		7EFF7A2E26B3D40A00360C6C /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF7A2D26B3D40A00360C6C /* Const.swift */; };
+		7EFF7A3126B3E6E000360C6C /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFF7A3026B3E6E000360C6C /* HomeResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,12 @@
 		7E0925FF26B26D5200C71631 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		7E09260826B2759900C71631 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		7EB7BD6626B28FBD005433F2 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		7EB7BD6926B2979C005433F2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7EB7BD6B26B369BF005433F2 /* HomeAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdapter.swift; sourceTree = "<group>"; };
+		7EFF7A2626B3D2D000360C6C /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
+		7EFF7A2B26B3D3A600360C6C /* FacadeApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacadeApiClient.swift; sourceTree = "<group>"; };
+		7EFF7A2D26B3D40A00360C6C /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		7EFF7A3026B3E6E000360C6C /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +146,7 @@
 		7E09254E26B137D300C71631 /* BaseExample */ = {
 			isa = PBXGroup;
 			children = (
+				7EFF7A2926B3D38D00360C6C /* Common */,
 				7E0925FC26B26CED00C71631 /* UI */,
 				7E09258526B1385400C71631 /* Main */,
 				7E09255826B137D400C71631 /* Assets.xcassets */,
@@ -199,11 +212,40 @@
 		7E0925FD26B26CF300C71631 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7EFF7A2F26B3E6D200360C6C /* Models */,
 				7E0925FE26B26D5200C71631 /* HomeViewController.swift */,
 				7E0925FF26B26D5200C71631 /* HomeViewController.xib */,
 				7EB7BD6626B28FBD005433F2 /* HomeCoordinator.swift */,
+				7EB7BD6926B2979C005433F2 /* HomeViewModel.swift */,
+				7EB7BD6B26B369BF005433F2 /* HomeAdapter.swift */,
+				7EFF7A2626B3D2D000360C6C /* HomeService.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7EFF7A2926B3D38D00360C6C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7EFF7A2A26B3D39300360C6C /* Network */,
+				7EFF7A2D26B3D40A00360C6C /* Const.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		7EFF7A2A26B3D39300360C6C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7EFF7A2B26B3D3A600360C6C /* FacadeApiClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7EFF7A2F26B3E6D200360C6C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7EFF7A3026B3E6E000360C6C /* HomeResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,11 +397,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E09260926B2759900C71631 /* MainNavigationController.swift in Sources */,
+				7EFF7A3126B3E6E000360C6C /* HomeResponse.swift in Sources */,
+				7EFF7A2C26B3D3A600360C6C /* FacadeApiClient.swift in Sources */,
 				7E09255426B137D300C71631 /* SplashViewController.swift in Sources */,
+				7EB7BD6A26B2979C005433F2 /* HomeViewModel.swift in Sources */,
 				7E09255026B137D300C71631 /* AppDelegate.swift in Sources */,
 				7E09255226B137D300C71631 /* SceneDelegate.swift in Sources */,
 				7E09260026B26D5200C71631 /* HomeViewController.swift in Sources */,
+				7EFF7A2726B3D2D000360C6C /* HomeService.swift in Sources */,
+				7EB7BD6C26B369BF005433F2 /* HomeAdapter.swift in Sources */,
 				7EB7BD6726B28FBD005433F2 /* HomeCoordinator.swift in Sources */,
+				7EFF7A2E26B3D40A00360C6C /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +595,7 @@
 					"@executable_path/Frameworks",
 					"$(PROJECT_DIR)/BaseKit",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungjun.BaseExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -569,6 +618,7 @@
 					"@executable_path/Frameworks",
 					"$(PROJECT_DIR)/BaseKit",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sungjun.BaseExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
