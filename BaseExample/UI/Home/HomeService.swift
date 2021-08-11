@@ -8,12 +8,12 @@
 import Foundation
 import RxSwift
 
-struct HomeService {
-    
+protocol HomeServiceType {
+    func getHomeModules() -> Observable<HomeResponse>
 }
 
-extension HomeService {
-    func getHomeModules() -> Observable<HomeResponse> {
+struct HomeService: HomeServiceType {
+    func getHome() -> Observable<HomeResponse> {
         return FacadeApiClient.shared.sendGet(path: URL.PATH.homeApi)
     }
 }

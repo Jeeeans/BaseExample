@@ -204,6 +204,7 @@
 		7E0925FC26B26CED00C71631 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				7E68CE5426C35E5A005F973F /* Modules */,
 				7E0925FD26B26CF300C71631 /* Home */,
 			);
 			path = UI;
@@ -221,6 +222,29 @@
 				7EFF7A2626B3D2D000360C6C /* HomeService.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7E68CE5426C35E5A005F973F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				7E68CE5726C35E65005F973F /* Model */,
+				7E68CE5626C35E60005F973F /* Cell */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		7E68CE5626C35E60005F973F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7E68CE5726C35E65005F973F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7EFF7A2926B3D38D00360C6C /* Common */ = {
