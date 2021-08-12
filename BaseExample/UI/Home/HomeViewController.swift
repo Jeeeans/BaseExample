@@ -10,11 +10,15 @@ import RxCocoa
 import UIKit
 import BaseKit
 
-class HomeViewController<T: HomeViewModel>: BaseRxViewController<T> {
+class HomeViewController<T: HomeViewModel>:
+    BaseRxViewController<T>,
+    UICollectionViewDelegateFlowLayout,
+    UICollectionViewDataSource {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var useSection: Bool = true
-    
+    var adapter: HomeAdapter = HomeAdapter()
     var pager: RxInfinitePager?
     
     var isPaging: Bool = false
@@ -42,12 +46,23 @@ class HomeViewController<T: HomeViewModel>: BaseRxViewController<T> {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return adapter.getListCount()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return adapter.size(indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = adapter.getCell(indexPath) else {
+            return collectionView.dequeueReusableCell(fromClass: MarginCell.self, for: indexPath)
+        }
+        return cell
+    }
 }
 
-extension HomeViewController: RxCollectionViewAdaptable {
-    var adapter: HomeAdapter = HomeAdapter()
-}
-
-extension HomeViewController: UIScrollViewDelegate {
-     
+extension HomeViewController {
+    
 }
